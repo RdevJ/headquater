@@ -1,0 +1,1 @@
+isort --overwrite-in-place app/
