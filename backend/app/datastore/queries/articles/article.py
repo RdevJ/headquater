@@ -1,22 +1,12 @@
-from app.schemas.article import Article
-
-fake_data = {
-    'first-article': Article(
-        title='First Article',
-        title_slug='first-article',
-        content='Content of the amazing article'
-    ),
-    'second-article': Article(
-        title='Second Article',
-        title_slug='second-article',
-        content='Poor writer'
-    )
-}
+from sqlalchemy.orm.session import Session
+from app.models.article import Article
 
 
 class ArticleQuery(object):
-    def __init__(self, article_slug):
+    def __init__(self, article_slug: str):
         self.article_slug = article_slug
 
-    def get_article(self):
-        return fake_data.get(self.article_slug, None)
+    def get_article(self, db: Session):
+        return db.query(Article).filter(
+            Article.title_slug == self.article_slug
+        ).first()

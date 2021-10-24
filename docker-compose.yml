@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+  db:
+    image: postgres:12
+    volumes:
+      - app-db-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: docker/backend.dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app/
+    depends_on:
+      - db
+    env_file:
+      - .env
+    tty: true
+    
+
+volumes:
+  app-db-data:
