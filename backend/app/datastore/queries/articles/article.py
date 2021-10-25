@@ -6,7 +6,7 @@ class ArticleQuery(object):
     def __init__(self, article_slug: str):
         self.article_slug = article_slug
 
-    def get_article(self, db: Session):
+    def get_article(self, db: Session) -> Article:
         return db.query(Article).filter(
             Article.title_slug == self.article_slug
         ).first()
