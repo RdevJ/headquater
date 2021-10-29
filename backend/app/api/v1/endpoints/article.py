@@ -9,6 +9,7 @@ from app.schemas.article import ArticleCreate, ArticleDb
 from app.datastore.commands.article.add import AddArticleCommand
 from app.datastore.commands.article.delete import DeleteArticleCommand
 from app.db.dependency import get_db
+from app.datastore.commands.article.update import UpdateArticleCommand
 
 router = APIRouter()
 
@@ -33,6 +34,13 @@ def read_article(article_slug: str, db: Session = Depends(get_db)) -> Any:
 @router.post('/', response_model=ArticleDb)
 def create_article(article: ArticleCreate, db: Session = Depends(get_db)) -> Any:
     article = AddArticleCommand(payload=article).add_article(db=db)
+
+    return article
+
+
+@router.put('/{article_slug}', response_model=ArticleDb)
+def update_article(article_slug: str, article: ArticleCreate, db: Session = Depends(get_db)) -> Any:
+    article = UpdateArticleCommand(payload=article, article_slug=article_slug).update_article(db=db)
 
     return article
 

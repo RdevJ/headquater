@@ -1,10 +1,13 @@
-#! /usr/bin/env bash
-@echo off
+#! /usr/bin/env sh
+
 set -e
 set -x
 
 echo "flake8..."
 flake8 app/
+
+echo "mypy..."
+mypy app/
 
 echo "bandit..."
 bandit -r app/
