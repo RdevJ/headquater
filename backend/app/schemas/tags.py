@@ -1,5 +1,13 @@
 from pydantic import BaseModel
 
 
-class Tag(BaseModel):
-    label: str
+class TagDb(BaseModel):
+    id: int
+    name: str
+
+    class Config:
+        orm_mode = True
+
+
+class TagCreate(BaseModel):
+    name: str

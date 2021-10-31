@@ -2,14 +2,14 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from app.schemas.tags import Tag
+from app.schemas.tags import TagDb
 
 
 class Article(BaseModel):
     title: str
     title_slug: str
     content: str
-    tags: Optional[List[Tag]]
+    tags: Optional[List[TagDb]]
 
 
 class ArticleCreate(BaseModel):
