@@ -8,28 +8,28 @@ from app.datastore.commands.tags.create import CreateTagCommand
 from app.datastore.commands.tags.delete import DeleteTagCommand
 from app.datastore.commands.tags.update import UpdateTagCommand
 from app.datastore.queries.tags.list import TagsQuery
-from app.schemas.tags import TagCreate, TagDb
+from app.schemas.tags import TagBase, TagDb
 
 router = APIRouter()
 
 
 @router.get("/", response_model=List[TagDb])
-def read_articles(db: Session = Depends(get_db)) -> Any:
+def read_tags(db: Session = Depends(get_db)) -> Any:
     return TagsQuery().get_tags(db=db)
 
 
 @router.post('/', response_model=TagDb)
-def create_article(tag: TagCreate, db: Session = Depends(get_db)) -> Any:
+def create_tag(tag: TagBase, db: Session = Depends(get_db)) -> Any:
     return CreateTagCommand(payload=tag).create_tag(db=db)
 
 
 @router.put('/{tag_id}', response_model=TagDb)
-def update_article(tag_id: int, tag: TagCreate, db: Session = Depends(get_db)) -> Any:
+def update_tag(tag_id: int, tag: TagBase, db: Session = Depends(get_db)) -> Any:
     return UpdateTagCommand(payload=tag, tag_id=tag_id).update_tag(db=db)
 
 
 @router.delete('/{tag_id}', response_model=TagDb)
-def delete_article(tag_id: int, db: Session = Depends(get_db)) -> Any:
+def delete_tag(tag_id: int, db: Session = Depends(get_db)) -> Any:
     tag = DeleteTagCommand(tag_id=tag_id).delete_tag(db=db)
 
     if not tag:

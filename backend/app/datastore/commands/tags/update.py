@@ -1,11 +1,11 @@
+from app.models.tag import Tag
+from app.schemas.tags import TagBase
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.expression import update
-from app.models.tag import Tag
-from app.schemas.tags import TagCreate
 
 
 class UpdateTagCommand(object):
-    def __init__(self, payload: TagCreate, tag_id: int):
+    def __init__(self, payload: TagBase, tag_id: int):
         self.payload = payload
         self.tag_id = tag_id
 

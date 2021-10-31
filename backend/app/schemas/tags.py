@@ -1,13 +1,12 @@
 from pydantic import BaseModel
 
 
-class TagDb(BaseModel):
-    id: int
+class TagBase(BaseModel):
     name: str
+
+
+class TagDb(TagBase):
+    id: int
 
     class Config:
         orm_mode = True
-
-
-class TagCreate(BaseModel):
-    name: str

@@ -5,24 +5,19 @@ from pydantic import BaseModel
 from app.schemas.tags import TagDb
 
 
-class Article(BaseModel):
-    title: str
-    title_slug: str
-    content: str
-    tags: Optional[List[TagDb]]
-
-
-class ArticleCreate(BaseModel):
+class ArticleBase(BaseModel):
     title: str
     title_slug: str
     content: str
 
 
-class ArticleDb(BaseModel):
+class ArticleCreate(ArticleBase):
+    tags: Optional[List[int]]
+
+
+class ArticleDb(ArticleBase):
     id: int
-    title: str
-    title_slug: str
-    content: str
+    tags: Optional[List[TagDb]]
 
     class Config:
         orm_mode = True
