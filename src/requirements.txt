@@ -50,3 +50,5 @@ urllib3==1.26.7
 uvicorn==0.15.0
 virtualenv==20.8.1
 xenon==0.8.0
+pytest==6.2.5
+SQLAlchemy-Utils==0.37.9

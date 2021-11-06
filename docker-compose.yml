@@ -11,18 +11,16 @@ services:
   
   backend:
     build:
-      context: ./backend
+      context: .
       dockerfile: docker/backend.dockerfile
     ports:
       - 8000:8000
     volumes:
-      - ./backend:/app/
+      - ./src:/app/
     depends_on:
       - db
     env_file:
       - .env
-    tty: true
-    
 
 volumes:
   app-db-data:
