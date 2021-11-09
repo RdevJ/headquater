@@ -18,7 +18,7 @@ def db_engine():
         user=settings.POSTGRES_USER,
         password=settings.POSTGRES_PASSWORD,
         host=settings.POSTGRES_SERVER,
-        path='/ctest',
+        path='/test',
     )
     engine = create_engine(uri)
     if not database_exists(engine.url):

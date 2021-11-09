@@ -1,9 +1,10 @@
 from typing import Optional
+
+from app.models.article import Article
+from app.schemas.article import ArticleBase
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.expression import update
-from app.models.article import Article
-from app.schemas.article import ArticleBase
 
 
 class UpdateArticleCommand(object):
@@ -21,7 +22,7 @@ class UpdateArticleCommand(object):
         db.execute(
             update(Article).
             where(Article.title_slug == self.article_slug).
-            values(self.payload.dict())
+            values(self.payload.dict(exclude_none=True))
         )
         db.commit()
         db.refresh(article)
