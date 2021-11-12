@@ -5,6 +5,7 @@ from pydantic.networks import PostgresDsn
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy_utils import create_database, database_exists
+from sqlalchemy_utils.functions.database import drop_database
 
 from app.db.base_class import Base
 from app.db.dependency import get_db
@@ -24,7 +25,10 @@ def db_engine():
     if not database_exists(engine.url):
         create_database(engine.url)
     Base.metadata.create_all(bind=engine)
+
     yield engine
+
+    drop_database(engine.url)
 
 
 @pytest.fixture(scope="function")
@@ -32,7 +36,7 @@ def db(db_engine):
     connection = db_engine.connect()
 
     # begin a non-ORM transaction
-    transaction = connection.begin()
+    connection.begin()
 
     # bind an individual Session to the connection
     db = Session(bind=connection)

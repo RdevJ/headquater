@@ -2,7 +2,6 @@ from typing import Optional
 
 from app.models.article import Article
 from app.schemas.article import ArticleBase
-from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.expression import update
 

@@ -42,7 +42,7 @@ def update_article(
     article_slug: str, article: ArticleCreate, db: Session = Depends(get_db)
 ) -> Any:
     article = UpdateArticleCommand(
-        payload=article, 
+        payload=article,
         article_slug=article_slug,
     ).update_article(db=db)
 

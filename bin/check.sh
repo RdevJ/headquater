@@ -1,19 +1,3 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
-set -e
-set -x
-
-echo "flake8..."
-flake8 app/
-
-echo "mypy..."
-mypy app/
-
-echo "bandit..."
-bandit -r app/
-
-echo "xenon..."
-xenon app/
-
-echo "safety..."
-safety check --full-report --bare
+docker-compose run --rm backend sh check.sh

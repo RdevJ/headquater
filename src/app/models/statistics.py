@@ -1,8 +1,7 @@
-from sqlalchemy import Column, Integer, String, Date, Float
+from app.db.base_class import Base
+from sqlalchemy import Column, Date, Float, Integer
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import ForeignKey
-
-from app.db.base_class import Base
 
 
 class Statistics(Base):
