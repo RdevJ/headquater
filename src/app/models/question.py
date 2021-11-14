@@ -10,4 +10,4 @@ class Question(Base):
     content = Column(String(255))
     article_id = Column(Integer, ForeignKey('article.id'))
 
-    answers = relationship('Answer')
+    answers = relationship('Answer', cascade="all, delete-orphan")

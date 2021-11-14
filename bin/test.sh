@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-docker-compose run --rm backend sh test.sh
+docker-compose run --rm backend sh test.sh $1
