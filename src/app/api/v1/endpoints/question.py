@@ -28,7 +28,7 @@ def update_question(question_id: int, question: QuestionBase, db: Session = Depe
     question_obj = UpdateQuestionCommand(payload=question, question_id=question_id).update_question(db=db)
 
     if not question_obj:
-        raise HTTPException(status_code=404, detail="Article not found")
+        raise HTTPException(status_code=404, detail="Question not found")
 
     return question_obj
 
@@ -38,6 +38,6 @@ def delete_question(question_id: int, db: Session = Depends(get_db)) -> Any:
     question = DeleteQuestionCommand(question_id=question_id).delete_question(db=db)
 
     if not question:
-        raise HTTPException(status_code=404, detail="Article not found")
+        raise HTTPException(status_code=404, detail="Question not found")
 
     return question

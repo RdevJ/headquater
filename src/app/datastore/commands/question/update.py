@@ -12,10 +12,10 @@ class UpdateQuestionCommand(object):
         self.question_id = question_id
 
     def update_question(self, db: Session) -> Optional[Question]:
-        article = (
+        question = (
             db.query(Question).filter(Question.id == self.question_id).first()
         )
-        if not article:
+        if not question:
             return None
 
         db.execute(
@@ -24,5 +24,5 @@ class UpdateQuestionCommand(object):
             values(self.payload.dict(exclude_none=True))
         )
         db.commit()
-        db.refresh(article)
-        return article
+        db.refresh(question)
+        return question
