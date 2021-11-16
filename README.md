@@ -6,7 +6,7 @@
 
 Prerequisites: 
 - crud for questions - done
-- crud for answers
+- crud for answers - done
 
 - Endpoint for receiving answers
 - Based on answers and statistics, next repetition time should be calculated
