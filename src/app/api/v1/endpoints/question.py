@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 router = APIRouter()
 
 
-@router.get("/", response_model=List[QuestionsDb])
+@router.get("/", response_model=List[QuestionDb])
 def read_questions(db: Session = Depends(get_db)) -> Any:
     return QuestionsQuery().get_questions(db=db)
 

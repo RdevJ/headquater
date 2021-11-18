@@ -1,8 +1,7 @@
 from typing import List, Optional
 
-from pydantic import BaseModel
-
 from app.schemas.tags import TagDb
+from pydantic import BaseModel
 
 
 class ArticleBase(BaseModel):
@@ -13,6 +12,7 @@ class ArticleBase(BaseModel):
 
 class ArticleCreate(ArticleBase):
     tags: Optional[List[int]]
+    questions: Optional[List[int]]
 
 
 class ArticleDb(ArticleBase):

@@ -32,7 +32,7 @@ def read_article(article_slug: str, db: Session = Depends(get_db)) -> Any:
 
 @router.post("/", response_model=ArticleDb)
 def create_article(article: ArticleCreate, db: Session = Depends(get_db)) -> Any:
-    article = AddArticleCommand(payload=article).add_article(db=db)
+    article = AddArticleCommand(payload=article, db=db).add_article()
 
     return article
 

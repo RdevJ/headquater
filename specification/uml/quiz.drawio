@@ -4,16 +4,16 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" vertex="1" parent="1">
-                    <mxGeometry x="120" y="120" width="20" height="300" as="geometry"/>
+                <mxCell id="2" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="120" width="20" height="450" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Vue App" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-                    <mxGeometry x="314" y="120" width="100" height="300" as="geometry"/>
+                <mxCell id="3" value="Vue App" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="314" y="120" width="100" height="450" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="FastAPI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-                    <mxGeometry x="560" y="120" width="100" height="300" as="geometry"/>
+                <mxCell id="4" value="FastAPI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="120" width="100" height="450" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="Give me a random question&lt;br&gt;for a particular group" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="2" target="3">
+                <mxCell id="5" value="Give me a random question&lt;br&gt;for a particular group" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" source="2" target="3" edge="1">
                     <mxGeometry width="60" relative="1" as="geometry">
                         <mxPoint x="200" y="210" as="sourcePoint"/>
                         <mxPoint x="260" y="210" as="targetPoint"/>
@@ -22,7 +22,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="GET: /quiz/{group_name}/" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="3" target="4">
+                <mxCell id="6" value="GET: /quiz/{group_name}/" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" source="3" target="4" edge="1">
                     <mxGeometry width="60" relative="1" as="geometry">
                         <mxPoint x="430" y="270" as="sourcePoint"/>
                         <mxPoint x="600" y="270" as="targetPoint"/>
@@ -31,20 +31,24 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="Analyze statistics for the provided group &lt;br&gt;and select article, which should be recalled.&amp;nbsp;" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="4" target="4">
-                    <mxGeometry x="-0.1242" y="30" width="60" relative="1" as="geometry">
-                        <mxPoint x="650" y="210" as="sourcePoint"/>
+                <mxCell id="9" value="Analyze statistics for the provided group &lt;br&gt;and select article, which should be recalled.&amp;nbsp;" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" source="4" target="4" edge="1">
+                    <mxGeometry x="-0.3297" y="71" width="60" relative="1" as="geometry">
+                        <mxPoint x="710" y="260" as="sourcePoint"/>
                         <mxPoint x="710" y="210" as="targetPoint"/>
-                        <mxPoint as="offset"/>
+                        <mxPoint x="71" y="61" as="offset"/>
+                        <Array as="points">
+                            <mxPoint x="640" y="260"/>
+                            <mxPoint x="640" y="290"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="List[Questions]" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1" target="3">
+                <mxCell id="10" value="List[Questions]" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="610" y="300" as="sourcePoint"/>
                         <mxPoint x="510" y="290" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="Question" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1" source="3" target="2">
+                <mxCell id="11" value="Question" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" source="3" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="330" y="300" as="sourcePoint"/>
                         <mxPoint x="250" y="300" as="targetPoint"/>
@@ -53,10 +57,10 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="loop" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;strokeWidth=5;" vertex="1" parent="1">
-                    <mxGeometry x="50" y="320" width="600" height="120" as="geometry"/>
+                <mxCell id="12" value="loop" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;strokeWidth=5;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="320" width="600" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Answer" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="2" target="3">
+                <mxCell id="13" value="Answer" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" source="2" target="3" edge="1">
                     <mxGeometry width="60" relative="1" as="geometry">
                         <mxPoint x="260" y="540" as="sourcePoint"/>
                         <mxPoint x="250" y="450" as="targetPoint"/>
@@ -65,7 +69,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="14" value="POST: /quiz/submit/" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="3" target="4">
+                <mxCell id="14" value="POST: /quiz/submit/" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" parent="1" source="3" target="4" edge="1">
                     <mxGeometry width="60" relative="1" as="geometry">
                         <mxPoint x="350" y="460" as="sourcePoint"/>
                         <mxPoint x="410" y="460" as="targetPoint"/>
@@ -74,8 +78,29 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="After every answer provided to the Vue App, there is an async POST to the FastAPI to update the knowledge level. It secures case, when user does not finish all questions. The calculation of knowledge level should take into account current level + % of one question." style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="314" y="460" width="480" height="110" as="geometry"/>
+                <mxCell id="17" value="After every answer provided to the Vue App, there is an async POST to the FastAPI to update the knowledge level. It secures case, when user does not finish all questions. The calculation of knowledge level should take into account current level + % of one question." style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="400" width="480" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Finish repetition" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="180" y="540" as="sourcePoint"/>
+                        <mxPoint x="240" y="540" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="300" y="540"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="POST: /quiz/finish/" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="480" y="580" as="sourcePoint"/>
+                        <mxPoint x="540" y="580" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="460" y="540"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="At the very end, Vue app uses finish endpoint, to finalize quiz so that statistics are recalculated." style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="570" width="270" height="90" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

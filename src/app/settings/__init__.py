@@ -1,11 +1,14 @@
-from pydantic import BaseSettings
+from datetime import timedelta
 from typing import Any, Dict, Optional
+
+from pydantic import BaseSettings, validator
 from pydantic.networks import PostgresDsn
-from pydantic import validator
 
 
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
+
+    INITIAL_REPETITION_TIMEDELTA = timedelta(days=2)
 
     POSTGRES_SERVER: str
     POSTGRES_USER: str
