@@ -8,8 +8,8 @@ Prerequisites:
 - crud for questions - done
 - crud for answers - done
 
-- Endpoint for receiving answers
-- Based on answers and statistics, next repetition time should be calculated
+- Endpoint for receiving answers - done
+- Based on answers and statistics, next repetition time should be calculated - done
 
 **As** a User
 **I want to** receive an article for provided group/tag

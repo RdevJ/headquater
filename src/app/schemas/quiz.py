@@ -7,3 +7,7 @@ class QuizSubmitBase(BaseModel):
     article_id: int
     question_id: int
     answers: List[int]
+
+
+class QuizFinalize(BaseModel):
+    article_id: int
